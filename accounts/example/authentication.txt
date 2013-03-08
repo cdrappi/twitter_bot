@@ -1,0 +1,4 @@
+on line 1: your consumer_key
+on line 2: your consumer_secret
+on line 3: your oauth_token
+on line 4: your oauth_token_secret

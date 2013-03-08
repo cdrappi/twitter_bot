@@ -1,0 +1,54 @@
+README
+
+I'm not very savvy with this stuff, so I'm sure someone could teach me a few things about doing this better. But here's some basic instructions to work with my wretched code:
+
+--------------------------------------To get yourself set up-------------------------------------------
+
+First, make sure you install 'rubygems' and the 'twitter' gem.
+
+Then, you should create a folder in "accounts" with the handle of the account you wish to robotize. (See the example. In fact, I recommend renaming the "example" folder with your own twitter handle, and then modifying those files. It'll probably be easier.) Inside this directory, create 3 folders: authentication.txt, message.txt and keywords.txt.
+
+In authentication.txt, enter the following characters on the following lines:
+on line 1: your consumer_key
+on line 2: your consumer_secret
+on line 3: your oauth_token
+on line 4: your oauth_token_secret
+
+To get these, go to dev.twitter.com, and register an app. After you do that, you'll be able to get your consumer key and consumer_secret. Then, you should go to the settings page (last time I checked, it was the second tab from the left) and say that you want to enable permissions to read, write and send messages. Then, go back to the main tab, and generate an oauth_token and oauth_token_secret. Put these in the authentication text file.
+
+In message.txt, enter the message you wish to send to new followers (when you tell the bot to send a message) on the first line.
+
+In keywords.txt, on each line, enter a keyword or keyphrase you'll search for. The advantage of this is the script lets you find the last people who have tweeted about a given keyphrase. For example, a file could look like this:
+--------------begin file------------------
+Duke
+United States of America
+Twitter Robots
+Communism
+---------------end file-------------------
+
+--------------------------------------To actually rub the script-------------------------------------------
+
+Execute the following command:
+
+$ ruby twitter.rb "example" "one thing to do" "another thing to do" "a third thing to do"
+
+Here, the "things to do" can be any of the following self-explanatory commands:
+
+"follow all followers" "unfollow all non followers" "unfollow everyone"
+
+Or, it can execute any of these less self-explanatory commands:
+
++ "message": sends a message to all followers who we haven't messaged before. We keep track of who we've messaged by the followers_messaged.txt file. I believe (and I hope) the program creates this file for you and should do all the bookkeeping.
+
++ "random": Follows random followers of people that follow you. You can go into the constants and change how many followers we'll crawl and how many of their followers we'll follow.
+
++ "keywords": Goes through our keywords.txt and follows those who tweeted the most recent number of tweets about each of our keywords.
+
++ "whitelist": adds all of those we follow to a whitelist. If we choose to "unfollow everyone", we will still be following those on the whitelist. So I guess it isn't really "unfollowing everyone", but that was the best name I could think of. If you truly want to unfollow everyone, clear your whitelist.txt file and then "unfollow everyone".
+
++ "blacklist": This blacklists everyone who follow you now. When deciding whether to follow someone new, if a user is on our blacklist, we will not follow them.
+
+
+--------------------------------------What I'm planning on adding-------------------------------------------
+
++ Another file called "to_follow.txt", where each line is a twitter handle. For each handle in this file, we will randomly file some of their followers. This can be useful. For example, suppose you are a charity that fights sudden infant death syndrome. You can likely reach those who are passionate about this cause by reaching out to people who follow other charities who hope to fight sudden infant death syndrome.
