@@ -2,7 +2,7 @@ README
 
 I'm not very savvy with this stuff, so I'm sure someone could teach me a few things about doing this better. But here's some basic instructions to work with my wretched code:
 
---------------------------------------To get yourself set up-------------------------------------------
+----------------------------To get yourself set up---------------------------------
 
 First, make sure you install 'rubygems' and the 'twitter' gem.
 
@@ -26,7 +26,7 @@ Twitter Robots
 Communism
 ---------------end file-------------------
 
---------------------------------------To actually rub the script-------------------------------------------
+----------------------------To actually run the script---------------------------------
 
 Execute the following command:
 
@@ -49,6 +49,6 @@ Or, it can execute any of these less self-explanatory commands:
 + "blacklist": This blacklists everyone who follow you now. When deciding whether to follow someone new, if a user is on our blacklist, we will not follow them.
 
 
---------------------------------------What I'm planning on adding-------------------------------------------
+----------------------------What I'm planning on adding---------------------------------
 
 + Another file called "to_follow.txt", where each line is a twitter handle. For each handle in this file, we will randomly file some of their followers. This can be useful. For example, suppose you are a charity that fights sudden infant death syndrome. You can likely reach those who are passionate about this cause by reaching out to people who follow other charities who hope to fight sudden infant death syndrome.
