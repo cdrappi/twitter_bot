@@ -125,6 +125,10 @@ class TwitterBot
 			puts("Resetting at: #{@reset_at}")
 			puts("Sleeping for #{@reset_in}")
 			sleep @reset_in
+		rescue => e
+			puts("Rescue: #{e}")
+		rescue Timeout::Error => te
+			puts("Rescued from timeout : #{te}")
 		end
 	end
 
