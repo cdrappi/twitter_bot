@@ -125,6 +125,10 @@ class TwitterBot
 			puts("Resetting at: #{@reset_at}")
 			puts("Sleeping for #{@reset_in}")
 			sleep @reset_in
+		rescue => e
+			puts("Rescue: #{e}")
+		rescue Timeout::Error => te
+			puts("Rescued from timeout : #{te}")
 		end
 	end
 
@@ -279,5 +283,22 @@ class TwitterBot
 			return true
 		end
 	end
+
+        def tweet
+                newTweet = pick_random_line()
+                puts newTweet
+                print "\n\n"
+                hit_twitter { @client.update( newTweet ) }
+        end
+
+
+
+        def pick_random_line
+                chosen_line = nil
+                File.foreach("#{self.get_account_path}tweets.txt").each_with_index do |line, number|
+                        chosen_line = line if rand < 1.0/(number+1)
+                end
+                return chosen_line
+        end
 
 end

@@ -77,3 +77,10 @@ if args.include?("keywords")
 	@twitter_bot.follow_keywords(keyword_tweets_to_read)
 	print "\n\n"
 end
+
+# to tweet from text file
+if args.include?("tweet")
+        puts "Tweeting from file"
+        @twitter_bot.tweet
+        print "\n\n"
+end
