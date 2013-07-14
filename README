@@ -26,6 +26,13 @@ Twitter Robots
 Communism
 ---------------end file-------------------
 
+In tweets.txt, each line should be a possible tweet to be chosen randomly.
+--------------begin file------------------
+tweet 1 
+tweet 2 
+each line a different tweet
+---------------end file-------------------
+
 ----------------------------To actually run the script---------------------------------
 
 Execute the following command:
@@ -37,6 +44,8 @@ Here, the "things to do" can be any of the following self-explanatory commands:
 "follow all followers" "unfollow all non followers" "unfollow everyone"
 
 Or, it can execute any of these less self-explanatory commands:
+
++ "tweet": tweets a ling chosen at random from the tweets.txt file.
 
 + "message": sends a message to all followers who we haven't messaged before. We keep track of who we've messaged by the followers_messaged.txt file. I believe (and I hope) the program creates this file for you and should do all the bookkeeping.
 
